@@ -4,10 +4,10 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 
 import env from '../env.js';
+import {generateHTML, parse} from './apks.js';
 import {nameText, numText} from './helpers/colors.js';
 import {log, logPlainError} from './helpers/logging.js';
 import {packageJson} from './helpers/parse.js';
-import parse from './tin-apps.js';
 
 const app = express();
 
@@ -21,12 +21,7 @@ app.use(compression());
 app.get('/apps', async (req, res) => {
     try {
         const apks = await parse();
-
-        const hrefs = [...apks]
-            .map(elem => `<p><a href="${elem}">${elem}</a></p>`)
-            .join('\n');
-
-        res.send(`<body>${hrefs}</body>`);
+        res.send(generateHTML(apks));
     } catch (err) {
         logPlainError(err);
         res.sendStatus(500);

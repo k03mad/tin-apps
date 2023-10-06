@@ -1,6 +1,6 @@
 const env = {
     server: {
-        port: process.env.npm_config_port || 13_000,
+        port: process.env.npm_config_port || 13_001,
     },
     debug: process.env.DEBUG,
 };

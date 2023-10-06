@@ -28,6 +28,10 @@ app.get('/apps', async (req, res) => {
     }
 });
 
+// not send anything => connectionfailure at browser
+// eslint-disable-next-line no-empty-function
+app.get('*', () => {});
+
 app.listen(env.server.port, () => log([
     `[${new Date().toLocaleString()}]`,
     nameText(packageJson.name),

@@ -1,16 +1,10 @@
-[ctrld-prom-exporter](https://github.com/k03mad/ctrld-prom-exporter) • [mik-prom-exporter](https://github.com/k03mad/mik-prom-exporter) • tin-invest-prom-exporter • [ya-iot-prom-exporter](https://github.com/k03mad/ya-iot-prom-exporter)
+# Tinkoff apps for Obtainium
 
-# [Tinkoff Investment — Prometheus] exporter
-
-— [Get read only token](https://www.tinkoff.ru/invest/settings/api/) \
-— [Use correct Node.JS version](.nvmrc) \
-— Start exporter:
+— Simple HTTP server\
+— Contains all Tinkoff Android apks list\
+— Parsed from [official site](https://www.tinkoff.ru/apps/)\
+— For using in [Obtainium](https://github.com/ImranR98/Obtainium)
 
 ```bash
-npm run start --token=t.a1234321 --port=11000
-# or with envs
-TINKOFF_API_TOKEN=t.a1234321 TINKOFF_EXPORTER_PORT=11000 npm run start
+npm run start --port=11000
 ```
-
-— Update Prometheus `scrape_configs` \
-— [Import Grafana dashboard](grafana.json)

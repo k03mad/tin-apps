@@ -26,10 +26,22 @@ export const parse = async () => {
  * @param {Set<string>} hrefs
  * @returns {string}
  */
-export const generateHTML = hrefs => {
-    const links = [...hrefs]
-        .map(elem => `<p><a href="${elem}">${elem}</a></p>`)
-        .join('');
+export const generateHTML = hrefs => `
+    <head>
+        <title>Tin Apps</title>
+        <style>
+            body {
+                background: rgb(25, 24, 29);
+                font-family: Arial;
+            }
 
-    return `<body>${links}</body>`;
-};
+            a {
+                text-decoration: none;
+                color: rgb(130,130,255);
+            }
+        </style>
+        </head>
+    <body>
+        ${[...hrefs].sort().map(elem => `<p><a href="${elem}">${elem}</a>`).join('')}
+    </body>
+`;

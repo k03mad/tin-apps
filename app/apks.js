@@ -31,14 +31,14 @@ export const generateHTML = hrefs => `
         <title>Tin Apps</title>
         <style>
             body {
-                background: rgb(25, 24, 29);
+                background: #19181D;
                 font-family: Arial;
-                font-size: 5vw;
+                font-size: 3vw;
             }
 
             a {
                 text-decoration: none;
-                color: rgb(130,130,255);
+                color: #8282FF;
             }
         </style>
         </head>

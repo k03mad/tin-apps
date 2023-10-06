@@ -33,7 +33,7 @@ export const generateHTML = hrefs => `
             body {
                 background: rgb(25, 24, 29);
                 font-family: Arial;
-                font-size: 10vw;
+                font-size: 5vw;
             }
 
             a {

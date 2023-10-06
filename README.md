@@ -6,5 +6,5 @@
 — For using in [Obtainium](https://github.com/ImranR98/Obtainium)
 
 ```bash
-npm run start --port=11000
+npm run start --port=3030
 ```

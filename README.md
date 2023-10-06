@@ -20,7 +20,7 @@ open http://localhost:3030/apps
 
 1. Add Source URL: `http://your-domain:3030/apps`
 2. Custom APK Link Filter: `tinkoff-bank.+apk`
-3. Version Extraction RegEx: `-([\d.-]+)\.apk`
+3. Version Extraction RegEx: `(\d[\d.-]+)\.apk`
 4. Match Group To Use: `1`
 
 ### Mobile app

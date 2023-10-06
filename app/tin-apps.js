@@ -6,7 +6,9 @@ import {request} from '@k03mad/request';
 export default async () => {
     const {body} = await request('https://www.tinkoff.ru/apps/', {
         headers: {
-            'user-agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+            'user-agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) '
+                        + 'AppleWebKit/537.36 (KHTML, like Gecko) '
+                        + 'Chrome/90.0.4430.91 Mobile Safari/537.36',
         },
     });
 

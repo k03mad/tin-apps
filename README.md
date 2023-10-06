@@ -7,4 +7,5 @@
 
 ```bash
 npm run start --port=3030
+open http://localhost:3030/apps
 ```

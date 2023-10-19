@@ -11,7 +11,8 @@ const REQUEST_UA = 'Mozilla/5.0 (Linux; Android 11; Pixel 5) '
 const RESPONSE_HTML_CONFIG_ELEMENT = '#__TRAMVAI_STATE__';
 const RESPONSE_HTML_CONFIG_APK_REGEXP = /[^"]+apk/g;
 
-const RENDER_MAX_UPDATES_INFO = 20;
+const RENDER_MAX_TIMESTAMPS = 10;
+const RENDER_MAX_UA = 100;
 
 const timestamps = [];
 const useragents = new Set();
@@ -48,13 +49,13 @@ const parseLinks = async () => {
  */
 const updateInfo = ({timings, ua = 'unknown'}) => {
     useragents.add(ua);
-    timestamps.push(`${new Date().toISOString()} :: ${timings} ms`);
+    timestamps.push(`${new Date().toISOString()} ${String(timings).padStart(4, ' ')} ms`);
 
-    if (timestamps.length > RENDER_MAX_UPDATES_INFO) {
+    if (timestamps.length > RENDER_MAX_TIMESTAMPS) {
         timestamps.splice(0, 1);
     }
 
-    if (useragents.size > RENDER_MAX_UPDATES_INFO) {
+    if (useragents.size > RENDER_MAX_UA) {
         useragents.delete([...useragents][0]);
     }
 };
@@ -75,11 +76,12 @@ export default async req => {
     const html = `
         <head>
             <title>Tin Apps</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
             <style>
                 body {
                     background: #19181D;
-                    font-family: Arial;
-                    font-size: 18px;
+                    font-family: 'Fira Code VF', Arial;
+                    font-size: 14px;
                 }
 
                 a {
@@ -113,7 +115,7 @@ export default async req => {
             <hr>
             <p class="timestamp-title-info">Updated:
             ${[...timestamps].reverse().map(timestamp => `<p class="timestamp-items-info">— ${timestamp}`).join('')}
-            <p class="ua-title-info">UA:
+            <p class="ua-title-info">Visitors:
             ${[...useragents].sort().map(ua => `<p class="ua-items-info">— ${ua}`).join('')}
         </body>
     `;

@@ -41,7 +41,7 @@
     "setup": "npm run clean && npm i",
     "setup:prod": "npm run clean && npm i --omit=dev",
     "start": "node app/server",
-    "start:dev": "DEBUG=mad* nodemon app/server",
+    "start:dev": "DEBUG=mad* nodemon -e js,css app/server",
     "prepare": "husky install || true"
   }
 }

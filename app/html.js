@@ -27,6 +27,7 @@ export default async req => {
             <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
             <link rel="manifest" href="/manifest/site.webmanifest">
             <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/fonts.css">
         </head>
         <body>
             <p><a class="main-link" href=${REQUEST_APPS_URL}>${REQUEST_APPS_URL}</a>

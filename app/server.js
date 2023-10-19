@@ -19,6 +19,7 @@ if (env.debug) {
 
 app.use(helmet());
 app.use(compression());
+app.use(express.static('app/static'));
 
 app.get(APPS_ROUTE, async (req, res) => {
     try {

@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Fira Code VF';
+    src: url('/fonts/FiraCode-VF.woff2') format('woff2');
+}
+
+body {
+    background: #19181D;
+    font-family: 'Fira Code VF', Arial;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #8282FF;
+}
+
+.main-link {
+    color: #FF82FF;
+}
+
+[class$=info] {
+    font-size: 14px;
+    color: #778899;
+}
+
+[class*=title-info] {
+    font-weight: bold;
+}
+
+[class*=items-info] {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}

@@ -5,6 +5,11 @@ const WWW_FOLDER = './app/www';
 export const SERVER = {
     url: `http://localhost:${env.server.port}`,
     static: `${WWW_FOLDER}/static`,
+    rates: {
+        windowMs: 1000,
+        limit: 3,
+        message: 429,
+    },
 };
 
 export const HANDLEBARS = {

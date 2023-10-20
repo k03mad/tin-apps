@@ -15,9 +15,7 @@ export const HANDLEBARS = {
 export const TINKOFF = {
     request: {
         url: 'https://www.tinkoff.ru/apps/',
-        cache: {
-            seconds: 5 * 60,
-        },
+        cacheSeconds: 3600,
 
         ua: 'Mozilla/5.0 (Linux; Android 11; Pixel 5) '
           + 'AppleWebKit/537.36 (KHTML, like Gecko) '

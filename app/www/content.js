@@ -12,7 +12,7 @@ const useragents = new Set();
 const parseAppsLinks = async () => {
     const {body} = await requestCache(TINKOFF.request.url, {
         headers: {'user-agent': TINKOFF.request.ua},
-    }, {expire: TINKOFF.request.cache.seconds});
+    }, {expire: TINKOFF.request.cacheSeconds});
 
     const text = getSelectorText(body, TINKOFF.response.element);
     const hrefs = text.match(TINKOFF.response.re);

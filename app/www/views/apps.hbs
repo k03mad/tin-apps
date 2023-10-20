@@ -1,0 +1,23 @@
+<p>
+    <a class="main-link" href={{links.main}}>{{links.main}}</a>
+</p>
+
+<hr>
+
+{{#each links.apps}}
+<p>
+    <a href="{{this}}">{{this}}</a>
+</p>
+{{/each}}
+
+<hr>
+
+<p class="timestamp-title-info">Updated:</p>
+{{#each visitors.timestamps}}
+<p class="timestamp-items-info">— {{this}}</p>
+{{/each}}
+
+<p class="ua-title-info">Visitors:</p>
+{{#each visitors.useragents}}
+<p class="ua-items-info">— {{this}}</p>
+{{/each}}

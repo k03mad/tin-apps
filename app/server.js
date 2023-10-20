@@ -1,6 +1,7 @@
 import compression from 'compression';
 import express from 'express';
 import {engine} from 'express-handlebars';
+import {rateLimit} from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
@@ -16,6 +17,7 @@ const app = express();
 env.debug && app.use(morgan('combined'));
 app.use(helmet());
 app.use(compression());
+app.use(rateLimit());
 app.use(express.static(SERVER.static));
 
 app.engine(HANDLEBARS.ext, engine({extname: HANDLEBARS.ext}));

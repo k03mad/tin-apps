@@ -1,24 +1,24 @@
-# Tinkoff apps for Obtainium
+# TIN-APPS
 
 ## WTF
 
-— Simple HTTP server\
-— Contains all Tinkoff Android apks list\
-— Parsed from [official site](https://www.tinkoff.ru/apps/)\
-— For using in [Obtainium](https://github.com/ImranR98/Obtainium)
+— HTTP-сервер\
+— Отдаёт страницу со ссылками на все Android-приложения Тинькофф\
+— Ссылки парсятся [с официального сайта](https://www.tinkoff.ru/apps/)\
+— Можно использовать [в Obtainium](https://github.com/ImranR98/Obtainium)
 
-## How to start
+## Запуск
 
 ```bash
 npm run start --port=3030
 open http://localhost:3030/apps
 ```
 
-## How to use in Obtainium
+## Obtainium
 
-### Bank app
+### tinkoff-bank
 
-1. Add Source URL: `http://your-domain:3030/apps`
-2. Custom APK Link Filter: `tinkoff-bank-([\d-]+)\.apk`
-3. Version Extraction RegEx: `tinkoff-bank-([\d-]+)\.apk`
-4. Match Group To Use: `1`
+1. URL-источник: `http://ваш-домен:3030/apps`
+2. Фильтр ссылок: `tinkoff-bank-([\d-]+)\.apk`
+3. Извлечение версии: `tinkoff-bank-([\d-]+)\.apk`
+4. Группа для извлечения версии: `1`
